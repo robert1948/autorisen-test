@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
-import dj_database_url
+#import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,8 +44,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website',
     'members',
-    'blog', # new
+    'blog', 
+    'storages',# new
 ]
+
+
+# Static files settings
+STATIC_URL = f'https://{471112944192}/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
