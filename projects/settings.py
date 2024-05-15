@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'website',
     'members',
     'blog', 
-    'storages',# new
+    'storages',
+    'address_book'# new
 ]
 
 
