@@ -23,7 +23,8 @@ urlpatterns = [
     path("members/", include("members.urls")),
     path("members/", include("django.contrib.auth.urls")),
     path("blog/", include("blog.urls")), 
-    path("address_book/", include("address_book.urls"))
+    path("address_book/", include("address_book.urls")),
+    path("authenticate/", include("authenticate.urls"))
     # new
     
 ]
