@@ -4,8 +4,8 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 from django.contrib import messages 
 from .forms import SignUpForm, EditProfileForm
 
-def home(request):
-	return render(request, 'authenticate/home.html', {})
+def start(request):
+	return render(request, 'authenticate/start.html', {})
 
 def login_user(request):
 	if request.method == 'POST':
@@ -15,7 +15,7 @@ def login_user(request):
 		if user is not None:
 			login(request, user)
 			messages.success(request, ('You Have Been Logged In!'))
-			return redirect('home')
+			return redirect('start')
 
 		else:
 			messages.success(request, ('Error Logging In - Please Try Again...'))
@@ -26,7 +26,7 @@ def login_user(request):
 def logout_user(request):
 	logout(request)
 	messages.success(request, ('You Have Been Logged Out...'))
-	return redirect('home')
+	return redirect('start')
 
 def register_user(request):
 	if request.method == 'POST':
@@ -38,7 +38,7 @@ def register_user(request):
 			user = authenticate(username=username, password=password)
 			login(request, user)
 			messages.success(request, ('You Have Registered...'))
-			return redirect('home')
+			return redirect('start')
 	else:
 		form = SignUpForm()
 	
@@ -53,7 +53,7 @@ def edit_profile(request):
 		if form.is_valid():
 			form.save()
 			messages.success(request, ('You Have Edited Your Profile...'))
-			return redirect('home')
+			return redirect('start')
 	else:
 		form = EditProfileForm(instance=request.user)
 	
@@ -67,7 +67,7 @@ def change_password(request):
 			form.save()
 			update_session_auth_hash(request, form.user)
 			messages.success(request, ('You Have Edited Your Password...'))
-			return redirect('home')
+			return redirect('start')
 	else:
 		form = PasswordChangeForm(user=request.user)
 	
