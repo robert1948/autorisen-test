@@ -103,10 +103,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9fpvi0egbl659',
-        'USER': 'zintgllvckjzyq',
-        'PASSWORD': 'd8c99b88c4fd630f630c8ea57b2ee526932913d2cb1d61b33ea84144c74e37a4',
-        'HOST': 'ec2-44-194-102-142.compute-1.amazonaws.com',
+        'NAME': 'd8b3aubcsv5prg',
+        'USER': 'czhzsavdqwhcpd',
+        'PASSWORD': '301fbc597cf1c76bbd865b106467a06ca7fc0619a326f66adecddd9627c09f93',
+        'HOST': 'ec2-100-27-57-231.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
