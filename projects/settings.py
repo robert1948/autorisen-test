@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'website',
     'members',
     'blog', 
-    'storages',
     'address_book',
     'authenticate'# new
 ]
