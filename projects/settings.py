@@ -35,15 +35,16 @@ INSTALLED_APPS = [
 # AWS S3 Settings
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_REGION_NAME = config('AWS_S3_REGION_NAME', default='us-east-1')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+AWS_STORAGE_BUCKET_NAME = 'lightning-s3'
+AWS_S3_REGION_NAME = 'us-east-1'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_FILE_OVERWRITE = False
 
 # Static files settings
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Use STORAGES setting instead of STATICFILES_STORAGE
 STORAGES = {
